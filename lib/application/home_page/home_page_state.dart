@@ -35,6 +35,7 @@ class HomePageState extends BaseState with _$HomePageState {
 @freezed
 class HomePageStateStore with _$HomePageStateStore {
   factory HomePageStateStore({
+    @Default([]) List<Rocket> rockets,
     @Default(false) final bool loading,
   }) = _HomePageStateStore;
 }

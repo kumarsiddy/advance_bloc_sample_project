@@ -727,6 +727,7 @@ abstract class _OnException extends HomePageState {
 
 /// @nodoc
 mixin _$HomePageStateStore {
+  List<Rocket> get rockets => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -740,7 +741,7 @@ abstract class $HomePageStateStoreCopyWith<$Res> {
           HomePageStateStore value, $Res Function(HomePageStateStore) then) =
       _$HomePageStateStoreCopyWithImpl<$Res, HomePageStateStore>;
   @useResult
-  $Res call({bool loading});
+  $Res call({List<Rocket> rockets, bool loading});
 }
 
 /// @nodoc
@@ -756,9 +757,14 @@ class _$HomePageStateStoreCopyWithImpl<$Res, $Val extends HomePageStateStore>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? rockets = null,
     Object? loading = null,
   }) {
     return _then(_value.copyWith(
+      rockets: null == rockets
+          ? _value.rockets
+          : rockets // ignore: cast_nullable_to_non_nullable
+              as List<Rocket>,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -775,7 +781,7 @@ abstract class _$$_HomePageStateStoreCopyWith<$Res>
       __$$_HomePageStateStoreCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool loading});
+  $Res call({List<Rocket> rockets, bool loading});
 }
 
 /// @nodoc
@@ -789,9 +795,14 @@ class __$$_HomePageStateStoreCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? rockets = null,
     Object? loading = null,
   }) {
     return _then(_$_HomePageStateStore(
+      rockets: null == rockets
+          ? _value._rockets
+          : rockets // ignore: cast_nullable_to_non_nullable
+              as List<Rocket>,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -803,7 +814,18 @@ class __$$_HomePageStateStoreCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_HomePageStateStore implements _HomePageStateStore {
-  _$_HomePageStateStore({this.loading = false});
+  _$_HomePageStateStore(
+      {final List<Rocket> rockets = const [], this.loading = false})
+      : _rockets = rockets;
+
+  final List<Rocket> _rockets;
+  @override
+  @JsonKey()
+  List<Rocket> get rockets {
+    if (_rockets is EqualUnmodifiableListView) return _rockets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_rockets);
+  }
 
   @override
   @JsonKey()
@@ -811,7 +833,7 @@ class _$_HomePageStateStore implements _HomePageStateStore {
 
   @override
   String toString() {
-    return 'HomePageStateStore(loading: $loading)';
+    return 'HomePageStateStore(rockets: $rockets, loading: $loading)';
   }
 
   @override
@@ -819,11 +841,13 @@ class _$_HomePageStateStore implements _HomePageStateStore {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HomePageStateStore &&
+            const DeepCollectionEquality().equals(other._rockets, _rockets) &&
             (identical(other.loading, loading) || other.loading == loading));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, loading);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_rockets), loading);
 
   @JsonKey(ignore: true)
   @override
@@ -834,8 +858,11 @@ class _$_HomePageStateStore implements _HomePageStateStore {
 }
 
 abstract class _HomePageStateStore implements HomePageStateStore {
-  factory _HomePageStateStore({final bool loading}) = _$_HomePageStateStore;
+  factory _HomePageStateStore(
+      {final List<Rocket> rockets, final bool loading}) = _$_HomePageStateStore;
 
+  @override
+  List<Rocket> get rockets;
   @override
   bool get loading;
   @override

@@ -16,7 +16,7 @@ class AppWidget extends StatelessWidget {
       builder: (context, _) => MaterialApp(
         debugShowCheckedModeBanner: false,
         navigatorKey: globalNavigatorKey,
-        title: 'SZ Hub',
+        title: 'SpaceX Demo',
         onGenerateRoute: RouteHandler.generateRoute,
         initialRoute: RouteId.homePage.name,
         navigatorObservers: [],

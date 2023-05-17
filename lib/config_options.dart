@@ -9,7 +9,7 @@ abstract class IConfigs {
 
 class UatConfigs implements IConfigs {
   @override
-  String baseUrl = 'https://restcountries.com/v3.1/';
+  String baseUrl = 'https://api.spacexdata.com/v4/';
 
   @override
   Env env = const Env(uat);
@@ -17,7 +17,7 @@ class UatConfigs implements IConfigs {
 
 class ProdConfigs implements IConfigs {
   @override
-  String baseUrl = 'https://restcountries.com/v3.1/';
+  String baseUrl = 'https://api.spacexdata.com/v4/';
 
   @override
   Env env = const Env(prod);

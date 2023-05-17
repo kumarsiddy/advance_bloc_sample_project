@@ -12,7 +12,7 @@ import 'package:advance_bloc_sample_project/presentation/core_app/design_library
 import 'package:advance_bloc_sample_project/presentation/core_app/router/route_handler.dart';
 import 'package:advance_bloc_sample_project/presentation/shared/screens/double_press_to_exit.dart';
 import 'package:advance_bloc_sample_project/presentation/shared/screens/spinkit_loader.dart';
-import 'package:advance_bloc_sample_project/presentation/shared/widgets/popup/snackbar.dart';
+import 'package:advance_bloc_sample_project/presentation/shared/widgets/snackbar.dart';
 import 'package:advance_bloc_sample_project/utils/app_utils.dart';
 import 'package:advance_bloc_sample_project/utils/string_keys.dart';
 import 'package:advance_bloc_sample_project/utils/typedef.dart';

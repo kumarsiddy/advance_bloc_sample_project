@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:advance_bloc_sample_project/infrastructure/dtos/dtos.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
@@ -14,6 +13,6 @@ abstract class RetrofitApiClient {
     Dio dio,
   ) = _RetrofitApiClient;
 
-  @GET('/payment/capture_payment/pay_Lp4keUwQWOKWl1')
-  Future<HttpResponse> initiateCreateMembership();
+  @GET('rockets')
+  Future<List<RocketDto>> getAllRockets();
 }

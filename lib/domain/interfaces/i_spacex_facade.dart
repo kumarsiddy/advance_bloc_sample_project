@@ -3,4 +3,5 @@ import 'package:advance_bloc_sample_project/infrastructure/api_services/errors.d
 import 'package:dartz/dartz.dart';
 
 abstract class ISpaceXFacade {
+  Future<Either<ServerException, List<Rocket>>> getAllRockets();
 }

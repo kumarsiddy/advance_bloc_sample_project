@@ -64,7 +64,7 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.singleton<_i10.RetrofitApiClient>(_i10.RetrofitApiClient(gh<_i9.Dio>()));
     gh.factory<_i11.ISpaceXFacade>(
-      () => _i12.UserFacade(gh<_i10.RetrofitApiClient>()),
+      () => _i12.SpaceXFacade(gh<_i10.RetrofitApiClient>()),
       registerFor: {
         _uat,
         _prod,
