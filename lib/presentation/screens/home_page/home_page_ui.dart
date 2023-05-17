@@ -49,10 +49,13 @@ class _RocketItem extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          ImageCard(
-            rocket?.images?.first ?? '',
-            height: 120.h,
-            fit: BoxFit.fill,
+          Hero(
+            tag: AppConstants.rocketImageTag,
+            child: ImageCard(
+              rocket?.images?.first ?? '',
+              height: 120.h,
+              fit: BoxFit.fill,
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(top: 4.r),

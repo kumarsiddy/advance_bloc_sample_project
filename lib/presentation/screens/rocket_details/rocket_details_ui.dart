@@ -10,7 +10,10 @@ class _RocketDetailsUi extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               if (state.store.rocket?.images?.first != null)
-                AppImage(state.store.rocket!.images!.first),
+                Hero(
+                  tag: AppConstants.rocketImageTag,
+                  child: AppImage(state.store.rocket!.images!.first),
+                ),
               _RocketInformationUi(),
             ],
           ),
