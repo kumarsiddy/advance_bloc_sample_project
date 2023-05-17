@@ -12,7 +12,7 @@ class _RocketDetailsUi extends StatelessWidget {
               if (state.store.rocket?.images?.first != null)
                 Hero(
                   tag: AppConstants.rocketImageTag,
-                  child: AppImage(state.store.rocket!.images!.first),
+                  child: ImageCard(state.store.rocket!.images!.first),
                 ),
               _RocketInformationUi(),
             ],

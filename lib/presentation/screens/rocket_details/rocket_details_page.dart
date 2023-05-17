@@ -6,6 +6,7 @@ import 'package:advance_bloc_sample_project/presentation/core_app/design_library
 import 'package:advance_bloc_sample_project/presentation/core_app/design_library/text.dart';
 import 'package:advance_bloc_sample_project/presentation/shared/widgets/app_bar.dart';
 import 'package:advance_bloc_sample_project/presentation/shared/widgets/app_image.dart';
+import 'package:advance_bloc_sample_project/presentation/shared/widgets/image_card.dart';
 import 'package:advance_bloc_sample_project/presentation/shared/widgets/row_pair_item.dart';
 import 'package:advance_bloc_sample_project/utils/app_constants.dart';
 import 'package:advance_bloc_sample_project/utils/string_keys.dart';
