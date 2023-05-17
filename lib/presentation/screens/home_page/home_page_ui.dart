@@ -44,21 +44,37 @@ class _RocketItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ImageCard(
-          rocket?.images?.first ?? '',
-          height: 120.h,
-          fit: BoxFit.fill,
-        ),
-        Padding(
-          padding: EdgeInsets.only(top: 8.r),
-          child: Body.semiBold(
-            text: rocket?.name ?? '',
+    return InkWell(
+      onTap: () => _handleRocketLaunch(context, rocket),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ImageCard(
+            rocket?.images?.first ?? '',
+            height: 120.h,
+            fit: BoxFit.fill,
           ),
-        )
-      ],
+          Padding(
+            padding: EdgeInsets.only(top: 4.r),
+            child: Body.semiBold(
+              text: rocket?.name ?? '',
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Future<void> _handleRocketLaunch(
+    BuildContext context,
+    Rocket? rocket,
+  ) async {
+    RouteHandler.navigateTo(
+      context,
+      routeId: RouteId.rocketDetails,
+      args: {
+        AppConstants.rocket: rocket,
+      },
     );
   }
 }

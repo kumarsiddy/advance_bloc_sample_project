@@ -16,7 +16,7 @@ class LoggerInterceptor extends Interceptor {
   /// Print request header [Options.headers]
   final bool requestHeader;
 
-  /// Print request data [Options.data]
+  /// Print request data [Options.rocket]
   final bool requestBody;
 
   /// Print [Response.data]

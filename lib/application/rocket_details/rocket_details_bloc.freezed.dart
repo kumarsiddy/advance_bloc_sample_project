@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_page_bloc.dart';
+part of 'rocket_details_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,20 +15,21 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$HomePageEvent {
+mixin _$RocketDetailsEvent {
+  Rocket get rocket => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(Rocket rocket) started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(Rocket rocket)? started,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(Rocket rocket)? started,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,84 +49,131 @@ mixin _$HomePageEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $RocketDetailsEventCopyWith<RocketDetailsEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomePageEventCopyWith<$Res> {
-  factory $HomePageEventCopyWith(
-          HomePageEvent value, $Res Function(HomePageEvent) then) =
-      _$HomePageEventCopyWithImpl<$Res, HomePageEvent>;
+abstract class $RocketDetailsEventCopyWith<$Res> {
+  factory $RocketDetailsEventCopyWith(
+          RocketDetailsEvent value, $Res Function(RocketDetailsEvent) then) =
+      _$RocketDetailsEventCopyWithImpl<$Res, RocketDetailsEvent>;
+  @useResult
+  $Res call({Rocket rocket});
 }
 
 /// @nodoc
-class _$HomePageEventCopyWithImpl<$Res, $Val extends HomePageEvent>
-    implements $HomePageEventCopyWith<$Res> {
-  _$HomePageEventCopyWithImpl(this._value, this._then);
+class _$RocketDetailsEventCopyWithImpl<$Res, $Val extends RocketDetailsEvent>
+    implements $RocketDetailsEventCopyWith<$Res> {
+  _$RocketDetailsEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? rocket = null,
+  }) {
+    return _then(_value.copyWith(
+      rocket: null == rocket
+          ? _value.rocket
+          : rocket // ignore: cast_nullable_to_non_nullable
+              as Rocket,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
+abstract class _$$_StartedCopyWith<$Res>
+    implements $RocketDetailsEventCopyWith<$Res> {
   factory _$$_StartedCopyWith(
           _$_Started value, $Res Function(_$_Started) then) =
       __$$_StartedCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Rocket rocket});
 }
 
 /// @nodoc
 class __$$_StartedCopyWithImpl<$Res>
-    extends _$HomePageEventCopyWithImpl<$Res, _$_Started>
+    extends _$RocketDetailsEventCopyWithImpl<$Res, _$_Started>
     implements _$$_StartedCopyWith<$Res> {
   __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? rocket = null,
+  }) {
+    return _then(_$_Started(
+      rocket: null == rocket
+          ? _value.rocket
+          : rocket // ignore: cast_nullable_to_non_nullable
+              as Rocket,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Started implements _Started {
-  const _$_Started();
+  const _$_Started({required this.rocket});
+
+  @override
+  final Rocket rocket;
 
   @override
   String toString() {
-    return 'HomePageEvent.started()';
+    return 'RocketDetailsEvent.started(rocket: $rocket)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
+        (other.runtimeType == runtimeType &&
+            other is _$_Started &&
+            (identical(other.rocket, rocket) || other.rocket == rocket));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, rocket);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_StartedCopyWith<_$_Started> get copyWith =>
+      __$$_StartedCopyWithImpl<_$_Started>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(Rocket rocket) started,
   }) {
-    return started();
+    return started(rocket);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(Rocket rocket)? started,
   }) {
-    return started?.call();
+    return started?.call(rocket);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(Rocket rocket)? started,
     required TResult orElse(),
   }) {
     if (started != null) {
-      return started();
+      return started(rocket);
     }
     return orElse();
   }
@@ -159,37 +207,46 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements HomePageEvent {
-  const factory _Started() = _$_Started;
+abstract class _Started implements RocketDetailsEvent {
+  const factory _Started({required final Rocket rocket}) = _$_Started;
+
+  @override
+  Rocket get rocket;
+  @override
+  @JsonKey(ignore: true)
+  _$$_StartedCopyWith<_$_Started> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$HomePageState {
-  HomePageStateStore get store => throw _privateConstructorUsedError;
+mixin _$RocketDetailsState {
+  RocketDetailsStateStore get store => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HomePageStateStore store) initial,
-    required TResult Function(HomePageStateStore store) onRocketsFetchSuccess,
-    required TResult Function(HomePageStateStore store) invalidateLoader,
-    required TResult Function(HomePageStateStore store, Exception exception)
+    required TResult Function(RocketDetailsStateStore store) initial,
+    required TResult Function(RocketDetailsStateStore store)
+        onRocketFetchSuccess,
+    required TResult Function(RocketDetailsStateStore store) invalidateLoader,
+    required TResult Function(
+            RocketDetailsStateStore store, Exception exception)
         onException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(HomePageStateStore store)? initial,
-    TResult? Function(HomePageStateStore store)? onRocketsFetchSuccess,
-    TResult? Function(HomePageStateStore store)? invalidateLoader,
-    TResult? Function(HomePageStateStore store, Exception exception)?
+    TResult? Function(RocketDetailsStateStore store)? initial,
+    TResult? Function(RocketDetailsStateStore store)? onRocketFetchSuccess,
+    TResult? Function(RocketDetailsStateStore store)? invalidateLoader,
+    TResult? Function(RocketDetailsStateStore store, Exception exception)?
         onException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HomePageStateStore store)? initial,
-    TResult Function(HomePageStateStore store)? onRocketsFetchSuccess,
-    TResult Function(HomePageStateStore store)? invalidateLoader,
-    TResult Function(HomePageStateStore store, Exception exception)?
+    TResult Function(RocketDetailsStateStore store)? initial,
+    TResult Function(RocketDetailsStateStore store)? onRocketFetchSuccess,
+    TResult Function(RocketDetailsStateStore store)? invalidateLoader,
+    TResult Function(RocketDetailsStateStore store, Exception exception)?
         onException,
     required TResult orElse(),
   }) =>
@@ -197,8 +254,7 @@ mixin _$HomePageState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_OnRocketsFetchSuccess value)
-        onRocketsFetchSuccess,
+    required TResult Function(_OnRocketFetchSuccess value) onRocketFetchSuccess,
     required TResult Function(_InvalidateLoader value) invalidateLoader,
     required TResult Function(_OnException value) onException,
   }) =>
@@ -206,7 +262,7 @@ mixin _$HomePageState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_OnRocketsFetchSuccess value)? onRocketsFetchSuccess,
+    TResult? Function(_OnRocketFetchSuccess value)? onRocketFetchSuccess,
     TResult? Function(_InvalidateLoader value)? invalidateLoader,
     TResult? Function(_OnException value)? onException,
   }) =>
@@ -214,7 +270,7 @@ mixin _$HomePageState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_OnRocketsFetchSuccess value)? onRocketsFetchSuccess,
+    TResult Function(_OnRocketFetchSuccess value)? onRocketFetchSuccess,
     TResult Function(_InvalidateLoader value)? invalidateLoader,
     TResult Function(_OnException value)? onException,
     required TResult orElse(),
@@ -222,25 +278,25 @@ mixin _$HomePageState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomePageStateCopyWith<HomePageState> get copyWith =>
+  $RocketDetailsStateCopyWith<RocketDetailsState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomePageStateCopyWith<$Res> {
-  factory $HomePageStateCopyWith(
-          HomePageState value, $Res Function(HomePageState) then) =
-      _$HomePageStateCopyWithImpl<$Res, HomePageState>;
+abstract class $RocketDetailsStateCopyWith<$Res> {
+  factory $RocketDetailsStateCopyWith(
+          RocketDetailsState value, $Res Function(RocketDetailsState) then) =
+      _$RocketDetailsStateCopyWithImpl<$Res, RocketDetailsState>;
   @useResult
-  $Res call({HomePageStateStore store});
+  $Res call({RocketDetailsStateStore store});
 
-  $HomePageStateStoreCopyWith<$Res> get store;
+  $RocketDetailsStateStoreCopyWith<$Res> get store;
 }
 
 /// @nodoc
-class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
-    implements $HomePageStateCopyWith<$Res> {
-  _$HomePageStateCopyWithImpl(this._value, this._then);
+class _$RocketDetailsStateCopyWithImpl<$Res, $Val extends RocketDetailsState>
+    implements $RocketDetailsStateCopyWith<$Res> {
+  _$RocketDetailsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -256,14 +312,14 @@ class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
       store: null == store
           ? _value.store
           : store // ignore: cast_nullable_to_non_nullable
-              as HomePageStateStore,
+              as RocketDetailsStateStore,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $HomePageStateStoreCopyWith<$Res> get store {
-    return $HomePageStateStoreCopyWith<$Res>(_value.store, (value) {
+  $RocketDetailsStateStoreCopyWith<$Res> get store {
+    return $RocketDetailsStateStoreCopyWith<$Res>(_value.store, (value) {
       return _then(_value.copyWith(store: value) as $Val);
     });
   }
@@ -271,21 +327,21 @@ class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
 
 /// @nodoc
 abstract class _$$_InitialCopyWith<$Res>
-    implements $HomePageStateCopyWith<$Res> {
+    implements $RocketDetailsStateCopyWith<$Res> {
   factory _$$_InitialCopyWith(
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({HomePageStateStore store});
+  $Res call({RocketDetailsStateStore store});
 
   @override
-  $HomePageStateStoreCopyWith<$Res> get store;
+  $RocketDetailsStateStoreCopyWith<$Res> get store;
 }
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$HomePageStateCopyWithImpl<$Res, _$_Initial>
+    extends _$RocketDetailsStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -299,7 +355,7 @@ class __$$_InitialCopyWithImpl<$Res>
       store: null == store
           ? _value.store
           : store // ignore: cast_nullable_to_non_nullable
-              as HomePageStateStore,
+              as RocketDetailsStateStore,
     ));
   }
 }
@@ -310,11 +366,11 @@ class _$_Initial extends _Initial {
   const _$_Initial({required this.store}) : super._();
 
   @override
-  final HomePageStateStore store;
+  final RocketDetailsStateStore store;
 
   @override
   String toString() {
-    return 'HomePageState.initial(store: $store)';
+    return 'RocketDetailsState.initial(store: $store)';
   }
 
   @override
@@ -337,10 +393,12 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HomePageStateStore store) initial,
-    required TResult Function(HomePageStateStore store) onRocketsFetchSuccess,
-    required TResult Function(HomePageStateStore store) invalidateLoader,
-    required TResult Function(HomePageStateStore store, Exception exception)
+    required TResult Function(RocketDetailsStateStore store) initial,
+    required TResult Function(RocketDetailsStateStore store)
+        onRocketFetchSuccess,
+    required TResult Function(RocketDetailsStateStore store) invalidateLoader,
+    required TResult Function(
+            RocketDetailsStateStore store, Exception exception)
         onException,
   }) {
     return initial(store);
@@ -349,10 +407,10 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(HomePageStateStore store)? initial,
-    TResult? Function(HomePageStateStore store)? onRocketsFetchSuccess,
-    TResult? Function(HomePageStateStore store)? invalidateLoader,
-    TResult? Function(HomePageStateStore store, Exception exception)?
+    TResult? Function(RocketDetailsStateStore store)? initial,
+    TResult? Function(RocketDetailsStateStore store)? onRocketFetchSuccess,
+    TResult? Function(RocketDetailsStateStore store)? invalidateLoader,
+    TResult? Function(RocketDetailsStateStore store, Exception exception)?
         onException,
   }) {
     return initial?.call(store);
@@ -361,10 +419,10 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HomePageStateStore store)? initial,
-    TResult Function(HomePageStateStore store)? onRocketsFetchSuccess,
-    TResult Function(HomePageStateStore store)? invalidateLoader,
-    TResult Function(HomePageStateStore store, Exception exception)?
+    TResult Function(RocketDetailsStateStore store)? initial,
+    TResult Function(RocketDetailsStateStore store)? onRocketFetchSuccess,
+    TResult Function(RocketDetailsStateStore store)? invalidateLoader,
+    TResult Function(RocketDetailsStateStore store, Exception exception)?
         onException,
     required TResult orElse(),
   }) {
@@ -378,8 +436,7 @@ class _$_Initial extends _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_OnRocketsFetchSuccess value)
-        onRocketsFetchSuccess,
+    required TResult Function(_OnRocketFetchSuccess value) onRocketFetchSuccess,
     required TResult Function(_InvalidateLoader value) invalidateLoader,
     required TResult Function(_OnException value) onException,
   }) {
@@ -390,7 +447,7 @@ class _$_Initial extends _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_OnRocketsFetchSuccess value)? onRocketsFetchSuccess,
+    TResult? Function(_OnRocketFetchSuccess value)? onRocketFetchSuccess,
     TResult? Function(_InvalidateLoader value)? invalidateLoader,
     TResult? Function(_OnException value)? onException,
   }) {
@@ -401,7 +458,7 @@ class _$_Initial extends _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_OnRocketsFetchSuccess value)? onRocketsFetchSuccess,
+    TResult Function(_OnRocketFetchSuccess value)? onRocketFetchSuccess,
     TResult Function(_InvalidateLoader value)? invalidateLoader,
     TResult Function(_OnException value)? onException,
     required TResult orElse(),
@@ -413,13 +470,13 @@ class _$_Initial extends _Initial {
   }
 }
 
-abstract class _Initial extends HomePageState {
-  const factory _Initial({required final HomePageStateStore store}) =
+abstract class _Initial extends RocketDetailsState {
+  const factory _Initial({required final RocketDetailsStateStore store}) =
       _$_Initial;
   const _Initial._() : super._();
 
   @override
-  HomePageStateStore get store;
+  RocketDetailsStateStore get store;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>
@@ -427,25 +484,25 @@ abstract class _Initial extends HomePageState {
 }
 
 /// @nodoc
-abstract class _$$_OnRocketsFetchSuccessCopyWith<$Res>
-    implements $HomePageStateCopyWith<$Res> {
-  factory _$$_OnRocketsFetchSuccessCopyWith(_$_OnRocketsFetchSuccess value,
-          $Res Function(_$_OnRocketsFetchSuccess) then) =
-      __$$_OnRocketsFetchSuccessCopyWithImpl<$Res>;
+abstract class _$$_OnRocketFetchSuccessCopyWith<$Res>
+    implements $RocketDetailsStateCopyWith<$Res> {
+  factory _$$_OnRocketFetchSuccessCopyWith(_$_OnRocketFetchSuccess value,
+          $Res Function(_$_OnRocketFetchSuccess) then) =
+      __$$_OnRocketFetchSuccessCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({HomePageStateStore store});
+  $Res call({RocketDetailsStateStore store});
 
   @override
-  $HomePageStateStoreCopyWith<$Res> get store;
+  $RocketDetailsStateStoreCopyWith<$Res> get store;
 }
 
 /// @nodoc
-class __$$_OnRocketsFetchSuccessCopyWithImpl<$Res>
-    extends _$HomePageStateCopyWithImpl<$Res, _$_OnRocketsFetchSuccess>
-    implements _$$_OnRocketsFetchSuccessCopyWith<$Res> {
-  __$$_OnRocketsFetchSuccessCopyWithImpl(_$_OnRocketsFetchSuccess _value,
-      $Res Function(_$_OnRocketsFetchSuccess) _then)
+class __$$_OnRocketFetchSuccessCopyWithImpl<$Res>
+    extends _$RocketDetailsStateCopyWithImpl<$Res, _$_OnRocketFetchSuccess>
+    implements _$$_OnRocketFetchSuccessCopyWith<$Res> {
+  __$$_OnRocketFetchSuccessCopyWithImpl(_$_OnRocketFetchSuccess _value,
+      $Res Function(_$_OnRocketFetchSuccess) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -453,33 +510,33 @@ class __$$_OnRocketsFetchSuccessCopyWithImpl<$Res>
   $Res call({
     Object? store = null,
   }) {
-    return _then(_$_OnRocketsFetchSuccess(
+    return _then(_$_OnRocketFetchSuccess(
       store: null == store
           ? _value.store
           : store // ignore: cast_nullable_to_non_nullable
-              as HomePageStateStore,
+              as RocketDetailsStateStore,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_OnRocketsFetchSuccess extends _OnRocketsFetchSuccess {
-  const _$_OnRocketsFetchSuccess({required this.store}) : super._();
+class _$_OnRocketFetchSuccess extends _OnRocketFetchSuccess {
+  const _$_OnRocketFetchSuccess({required this.store}) : super._();
 
   @override
-  final HomePageStateStore store;
+  final RocketDetailsStateStore store;
 
   @override
   String toString() {
-    return 'HomePageState.onRocketsFetchSuccess(store: $store)';
+    return 'RocketDetailsState.onRocketFetchSuccess(store: $store)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnRocketsFetchSuccess &&
+            other is _$_OnRocketFetchSuccess &&
             (identical(other.store, store) || other.store == store));
   }
 
@@ -489,46 +546,48 @@ class _$_OnRocketsFetchSuccess extends _OnRocketsFetchSuccess {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnRocketsFetchSuccessCopyWith<_$_OnRocketsFetchSuccess> get copyWith =>
-      __$$_OnRocketsFetchSuccessCopyWithImpl<_$_OnRocketsFetchSuccess>(
+  _$$_OnRocketFetchSuccessCopyWith<_$_OnRocketFetchSuccess> get copyWith =>
+      __$$_OnRocketFetchSuccessCopyWithImpl<_$_OnRocketFetchSuccess>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HomePageStateStore store) initial,
-    required TResult Function(HomePageStateStore store) onRocketsFetchSuccess,
-    required TResult Function(HomePageStateStore store) invalidateLoader,
-    required TResult Function(HomePageStateStore store, Exception exception)
+    required TResult Function(RocketDetailsStateStore store) initial,
+    required TResult Function(RocketDetailsStateStore store)
+        onRocketFetchSuccess,
+    required TResult Function(RocketDetailsStateStore store) invalidateLoader,
+    required TResult Function(
+            RocketDetailsStateStore store, Exception exception)
         onException,
   }) {
-    return onRocketsFetchSuccess(store);
+    return onRocketFetchSuccess(store);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(HomePageStateStore store)? initial,
-    TResult? Function(HomePageStateStore store)? onRocketsFetchSuccess,
-    TResult? Function(HomePageStateStore store)? invalidateLoader,
-    TResult? Function(HomePageStateStore store, Exception exception)?
+    TResult? Function(RocketDetailsStateStore store)? initial,
+    TResult? Function(RocketDetailsStateStore store)? onRocketFetchSuccess,
+    TResult? Function(RocketDetailsStateStore store)? invalidateLoader,
+    TResult? Function(RocketDetailsStateStore store, Exception exception)?
         onException,
   }) {
-    return onRocketsFetchSuccess?.call(store);
+    return onRocketFetchSuccess?.call(store);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HomePageStateStore store)? initial,
-    TResult Function(HomePageStateStore store)? onRocketsFetchSuccess,
-    TResult Function(HomePageStateStore store)? invalidateLoader,
-    TResult Function(HomePageStateStore store, Exception exception)?
+    TResult Function(RocketDetailsStateStore store)? initial,
+    TResult Function(RocketDetailsStateStore store)? onRocketFetchSuccess,
+    TResult Function(RocketDetailsStateStore store)? invalidateLoader,
+    TResult Function(RocketDetailsStateStore store, Exception exception)?
         onException,
     required TResult orElse(),
   }) {
-    if (onRocketsFetchSuccess != null) {
-      return onRocketsFetchSuccess(store);
+    if (onRocketFetchSuccess != null) {
+      return onRocketFetchSuccess(store);
     }
     return orElse();
   }
@@ -537,71 +596,70 @@ class _$_OnRocketsFetchSuccess extends _OnRocketsFetchSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_OnRocketsFetchSuccess value)
-        onRocketsFetchSuccess,
+    required TResult Function(_OnRocketFetchSuccess value) onRocketFetchSuccess,
     required TResult Function(_InvalidateLoader value) invalidateLoader,
     required TResult Function(_OnException value) onException,
   }) {
-    return onRocketsFetchSuccess(this);
+    return onRocketFetchSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_OnRocketsFetchSuccess value)? onRocketsFetchSuccess,
+    TResult? Function(_OnRocketFetchSuccess value)? onRocketFetchSuccess,
     TResult? Function(_InvalidateLoader value)? invalidateLoader,
     TResult? Function(_OnException value)? onException,
   }) {
-    return onRocketsFetchSuccess?.call(this);
+    return onRocketFetchSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_OnRocketsFetchSuccess value)? onRocketsFetchSuccess,
+    TResult Function(_OnRocketFetchSuccess value)? onRocketFetchSuccess,
     TResult Function(_InvalidateLoader value)? invalidateLoader,
     TResult Function(_OnException value)? onException,
     required TResult orElse(),
   }) {
-    if (onRocketsFetchSuccess != null) {
-      return onRocketsFetchSuccess(this);
+    if (onRocketFetchSuccess != null) {
+      return onRocketFetchSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class _OnRocketsFetchSuccess extends HomePageState {
-  const factory _OnRocketsFetchSuccess(
-      {required final HomePageStateStore store}) = _$_OnRocketsFetchSuccess;
-  const _OnRocketsFetchSuccess._() : super._();
+abstract class _OnRocketFetchSuccess extends RocketDetailsState {
+  const factory _OnRocketFetchSuccess(
+      {required final RocketDetailsStateStore store}) = _$_OnRocketFetchSuccess;
+  const _OnRocketFetchSuccess._() : super._();
 
   @override
-  HomePageStateStore get store;
+  RocketDetailsStateStore get store;
   @override
   @JsonKey(ignore: true)
-  _$$_OnRocketsFetchSuccessCopyWith<_$_OnRocketsFetchSuccess> get copyWith =>
+  _$$_OnRocketFetchSuccessCopyWith<_$_OnRocketFetchSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_InvalidateLoaderCopyWith<$Res>
-    implements $HomePageStateCopyWith<$Res> {
+    implements $RocketDetailsStateCopyWith<$Res> {
   factory _$$_InvalidateLoaderCopyWith(
           _$_InvalidateLoader value, $Res Function(_$_InvalidateLoader) then) =
       __$$_InvalidateLoaderCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({HomePageStateStore store});
+  $Res call({RocketDetailsStateStore store});
 
   @override
-  $HomePageStateStoreCopyWith<$Res> get store;
+  $RocketDetailsStateStoreCopyWith<$Res> get store;
 }
 
 /// @nodoc
 class __$$_InvalidateLoaderCopyWithImpl<$Res>
-    extends _$HomePageStateCopyWithImpl<$Res, _$_InvalidateLoader>
+    extends _$RocketDetailsStateCopyWithImpl<$Res, _$_InvalidateLoader>
     implements _$$_InvalidateLoaderCopyWith<$Res> {
   __$$_InvalidateLoaderCopyWithImpl(
       _$_InvalidateLoader _value, $Res Function(_$_InvalidateLoader) _then)
@@ -616,7 +674,7 @@ class __$$_InvalidateLoaderCopyWithImpl<$Res>
       store: null == store
           ? _value.store
           : store // ignore: cast_nullable_to_non_nullable
-              as HomePageStateStore,
+              as RocketDetailsStateStore,
     ));
   }
 }
@@ -627,11 +685,11 @@ class _$_InvalidateLoader extends _InvalidateLoader {
   _$_InvalidateLoader({required this.store}) : super._();
 
   @override
-  final HomePageStateStore store;
+  final RocketDetailsStateStore store;
 
   @override
   String toString() {
-    return 'HomePageState.invalidateLoader(store: $store)';
+    return 'RocketDetailsState.invalidateLoader(store: $store)';
   }
 
   @override
@@ -654,10 +712,12 @@ class _$_InvalidateLoader extends _InvalidateLoader {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HomePageStateStore store) initial,
-    required TResult Function(HomePageStateStore store) onRocketsFetchSuccess,
-    required TResult Function(HomePageStateStore store) invalidateLoader,
-    required TResult Function(HomePageStateStore store, Exception exception)
+    required TResult Function(RocketDetailsStateStore store) initial,
+    required TResult Function(RocketDetailsStateStore store)
+        onRocketFetchSuccess,
+    required TResult Function(RocketDetailsStateStore store) invalidateLoader,
+    required TResult Function(
+            RocketDetailsStateStore store, Exception exception)
         onException,
   }) {
     return invalidateLoader(store);
@@ -666,10 +726,10 @@ class _$_InvalidateLoader extends _InvalidateLoader {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(HomePageStateStore store)? initial,
-    TResult? Function(HomePageStateStore store)? onRocketsFetchSuccess,
-    TResult? Function(HomePageStateStore store)? invalidateLoader,
-    TResult? Function(HomePageStateStore store, Exception exception)?
+    TResult? Function(RocketDetailsStateStore store)? initial,
+    TResult? Function(RocketDetailsStateStore store)? onRocketFetchSuccess,
+    TResult? Function(RocketDetailsStateStore store)? invalidateLoader,
+    TResult? Function(RocketDetailsStateStore store, Exception exception)?
         onException,
   }) {
     return invalidateLoader?.call(store);
@@ -678,10 +738,10 @@ class _$_InvalidateLoader extends _InvalidateLoader {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HomePageStateStore store)? initial,
-    TResult Function(HomePageStateStore store)? onRocketsFetchSuccess,
-    TResult Function(HomePageStateStore store)? invalidateLoader,
-    TResult Function(HomePageStateStore store, Exception exception)?
+    TResult Function(RocketDetailsStateStore store)? initial,
+    TResult Function(RocketDetailsStateStore store)? onRocketFetchSuccess,
+    TResult Function(RocketDetailsStateStore store)? invalidateLoader,
+    TResult Function(RocketDetailsStateStore store, Exception exception)?
         onException,
     required TResult orElse(),
   }) {
@@ -695,8 +755,7 @@ class _$_InvalidateLoader extends _InvalidateLoader {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_OnRocketsFetchSuccess value)
-        onRocketsFetchSuccess,
+    required TResult Function(_OnRocketFetchSuccess value) onRocketFetchSuccess,
     required TResult Function(_InvalidateLoader value) invalidateLoader,
     required TResult Function(_OnException value) onException,
   }) {
@@ -707,7 +766,7 @@ class _$_InvalidateLoader extends _InvalidateLoader {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_OnRocketsFetchSuccess value)? onRocketsFetchSuccess,
+    TResult? Function(_OnRocketFetchSuccess value)? onRocketFetchSuccess,
     TResult? Function(_InvalidateLoader value)? invalidateLoader,
     TResult? Function(_OnException value)? onException,
   }) {
@@ -718,7 +777,7 @@ class _$_InvalidateLoader extends _InvalidateLoader {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_OnRocketsFetchSuccess value)? onRocketsFetchSuccess,
+    TResult Function(_OnRocketFetchSuccess value)? onRocketFetchSuccess,
     TResult Function(_InvalidateLoader value)? invalidateLoader,
     TResult Function(_OnException value)? onException,
     required TResult orElse(),
@@ -730,13 +789,13 @@ class _$_InvalidateLoader extends _InvalidateLoader {
   }
 }
 
-abstract class _InvalidateLoader extends HomePageState {
-  factory _InvalidateLoader({required final HomePageStateStore store}) =
+abstract class _InvalidateLoader extends RocketDetailsState {
+  factory _InvalidateLoader({required final RocketDetailsStateStore store}) =
       _$_InvalidateLoader;
   _InvalidateLoader._() : super._();
 
   @override
-  HomePageStateStore get store;
+  RocketDetailsStateStore get store;
   @override
   @JsonKey(ignore: true)
   _$$_InvalidateLoaderCopyWith<_$_InvalidateLoader> get copyWith =>
@@ -745,21 +804,21 @@ abstract class _InvalidateLoader extends HomePageState {
 
 /// @nodoc
 abstract class _$$_OnExceptionCopyWith<$Res>
-    implements $HomePageStateCopyWith<$Res> {
+    implements $RocketDetailsStateCopyWith<$Res> {
   factory _$$_OnExceptionCopyWith(
           _$_OnException value, $Res Function(_$_OnException) then) =
       __$$_OnExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({HomePageStateStore store, Exception exception});
+  $Res call({RocketDetailsStateStore store, Exception exception});
 
   @override
-  $HomePageStateStoreCopyWith<$Res> get store;
+  $RocketDetailsStateStoreCopyWith<$Res> get store;
 }
 
 /// @nodoc
 class __$$_OnExceptionCopyWithImpl<$Res>
-    extends _$HomePageStateCopyWithImpl<$Res, _$_OnException>
+    extends _$RocketDetailsStateCopyWithImpl<$Res, _$_OnException>
     implements _$$_OnExceptionCopyWith<$Res> {
   __$$_OnExceptionCopyWithImpl(
       _$_OnException _value, $Res Function(_$_OnException) _then)
@@ -775,7 +834,7 @@ class __$$_OnExceptionCopyWithImpl<$Res>
       store: null == store
           ? _value.store
           : store // ignore: cast_nullable_to_non_nullable
-              as HomePageStateStore,
+              as RocketDetailsStateStore,
       exception: null == exception
           ? _value.exception
           : exception // ignore: cast_nullable_to_non_nullable
@@ -790,13 +849,13 @@ class _$_OnException extends _OnException {
   _$_OnException({required this.store, required this.exception}) : super._();
 
   @override
-  final HomePageStateStore store;
+  final RocketDetailsStateStore store;
   @override
   final Exception exception;
 
   @override
   String toString() {
-    return 'HomePageState.onException(store: $store, exception: $exception)';
+    return 'RocketDetailsState.onException(store: $store, exception: $exception)';
   }
 
   @override
@@ -821,10 +880,12 @@ class _$_OnException extends _OnException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HomePageStateStore store) initial,
-    required TResult Function(HomePageStateStore store) onRocketsFetchSuccess,
-    required TResult Function(HomePageStateStore store) invalidateLoader,
-    required TResult Function(HomePageStateStore store, Exception exception)
+    required TResult Function(RocketDetailsStateStore store) initial,
+    required TResult Function(RocketDetailsStateStore store)
+        onRocketFetchSuccess,
+    required TResult Function(RocketDetailsStateStore store) invalidateLoader,
+    required TResult Function(
+            RocketDetailsStateStore store, Exception exception)
         onException,
   }) {
     return onException(store, exception);
@@ -833,10 +894,10 @@ class _$_OnException extends _OnException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(HomePageStateStore store)? initial,
-    TResult? Function(HomePageStateStore store)? onRocketsFetchSuccess,
-    TResult? Function(HomePageStateStore store)? invalidateLoader,
-    TResult? Function(HomePageStateStore store, Exception exception)?
+    TResult? Function(RocketDetailsStateStore store)? initial,
+    TResult? Function(RocketDetailsStateStore store)? onRocketFetchSuccess,
+    TResult? Function(RocketDetailsStateStore store)? invalidateLoader,
+    TResult? Function(RocketDetailsStateStore store, Exception exception)?
         onException,
   }) {
     return onException?.call(store, exception);
@@ -845,10 +906,10 @@ class _$_OnException extends _OnException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HomePageStateStore store)? initial,
-    TResult Function(HomePageStateStore store)? onRocketsFetchSuccess,
-    TResult Function(HomePageStateStore store)? invalidateLoader,
-    TResult Function(HomePageStateStore store, Exception exception)?
+    TResult Function(RocketDetailsStateStore store)? initial,
+    TResult Function(RocketDetailsStateStore store)? onRocketFetchSuccess,
+    TResult Function(RocketDetailsStateStore store)? invalidateLoader,
+    TResult Function(RocketDetailsStateStore store, Exception exception)?
         onException,
     required TResult orElse(),
   }) {
@@ -862,8 +923,7 @@ class _$_OnException extends _OnException {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_OnRocketsFetchSuccess value)
-        onRocketsFetchSuccess,
+    required TResult Function(_OnRocketFetchSuccess value) onRocketFetchSuccess,
     required TResult Function(_InvalidateLoader value) invalidateLoader,
     required TResult Function(_OnException value) onException,
   }) {
@@ -874,7 +934,7 @@ class _$_OnException extends _OnException {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_OnRocketsFetchSuccess value)? onRocketsFetchSuccess,
+    TResult? Function(_OnRocketFetchSuccess value)? onRocketFetchSuccess,
     TResult? Function(_InvalidateLoader value)? invalidateLoader,
     TResult? Function(_OnException value)? onException,
   }) {
@@ -885,7 +945,7 @@ class _$_OnException extends _OnException {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_OnRocketsFetchSuccess value)? onRocketsFetchSuccess,
+    TResult Function(_OnRocketFetchSuccess value)? onRocketFetchSuccess,
     TResult Function(_InvalidateLoader value)? invalidateLoader,
     TResult Function(_OnException value)? onException,
     required TResult orElse(),
@@ -897,14 +957,14 @@ class _$_OnException extends _OnException {
   }
 }
 
-abstract class _OnException extends HomePageState {
+abstract class _OnException extends RocketDetailsState {
   factory _OnException(
-      {required final HomePageStateStore store,
+      {required final RocketDetailsStateStore store,
       required final Exception exception}) = _$_OnException;
   _OnException._() : super._();
 
   @override
-  HomePageStateStore get store;
+  RocketDetailsStateStore get store;
   Exception get exception;
   @override
   @JsonKey(ignore: true)
@@ -913,28 +973,29 @@ abstract class _OnException extends HomePageState {
 }
 
 /// @nodoc
-mixin _$HomePageStateStore {
-  List<Rocket> get rockets => throw _privateConstructorUsedError;
+mixin _$RocketDetailsStateStore {
+  Rocket? get rocket => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomePageStateStoreCopyWith<HomePageStateStore> get copyWith =>
+  $RocketDetailsStateStoreCopyWith<RocketDetailsStateStore> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomePageStateStoreCopyWith<$Res> {
-  factory $HomePageStateStoreCopyWith(
-          HomePageStateStore value, $Res Function(HomePageStateStore) then) =
-      _$HomePageStateStoreCopyWithImpl<$Res, HomePageStateStore>;
+abstract class $RocketDetailsStateStoreCopyWith<$Res> {
+  factory $RocketDetailsStateStoreCopyWith(RocketDetailsStateStore value,
+          $Res Function(RocketDetailsStateStore) then) =
+      _$RocketDetailsStateStoreCopyWithImpl<$Res, RocketDetailsStateStore>;
   @useResult
-  $Res call({List<Rocket> rockets, bool loading});
+  $Res call({Rocket? rocket, bool loading});
 }
 
 /// @nodoc
-class _$HomePageStateStoreCopyWithImpl<$Res, $Val extends HomePageStateStore>
-    implements $HomePageStateStoreCopyWith<$Res> {
-  _$HomePageStateStoreCopyWithImpl(this._value, this._then);
+class _$RocketDetailsStateStoreCopyWithImpl<$Res,
+        $Val extends RocketDetailsStateStore>
+    implements $RocketDetailsStateStoreCopyWith<$Res> {
+  _$RocketDetailsStateStoreCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -944,14 +1005,14 @@ class _$HomePageStateStoreCopyWithImpl<$Res, $Val extends HomePageStateStore>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rockets = null,
+    Object? rocket = freezed,
     Object? loading = null,
   }) {
     return _then(_value.copyWith(
-      rockets: null == rockets
-          ? _value.rockets
-          : rockets // ignore: cast_nullable_to_non_nullable
-              as List<Rocket>,
+      rocket: freezed == rocket
+          ? _value.rocket
+          : rocket // ignore: cast_nullable_to_non_nullable
+              as Rocket?,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -961,35 +1022,36 @@ class _$HomePageStateStoreCopyWithImpl<$Res, $Val extends HomePageStateStore>
 }
 
 /// @nodoc
-abstract class _$$_HomePageStateStoreCopyWith<$Res>
-    implements $HomePageStateStoreCopyWith<$Res> {
-  factory _$$_HomePageStateStoreCopyWith(_$_HomePageStateStore value,
-          $Res Function(_$_HomePageStateStore) then) =
-      __$$_HomePageStateStoreCopyWithImpl<$Res>;
+abstract class _$$_RocketDetailsStateStoreCopyWith<$Res>
+    implements $RocketDetailsStateStoreCopyWith<$Res> {
+  factory _$$_RocketDetailsStateStoreCopyWith(_$_RocketDetailsStateStore value,
+          $Res Function(_$_RocketDetailsStateStore) then) =
+      __$$_RocketDetailsStateStoreCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Rocket> rockets, bool loading});
+  $Res call({Rocket? rocket, bool loading});
 }
 
 /// @nodoc
-class __$$_HomePageStateStoreCopyWithImpl<$Res>
-    extends _$HomePageStateStoreCopyWithImpl<$Res, _$_HomePageStateStore>
-    implements _$$_HomePageStateStoreCopyWith<$Res> {
-  __$$_HomePageStateStoreCopyWithImpl(
-      _$_HomePageStateStore _value, $Res Function(_$_HomePageStateStore) _then)
+class __$$_RocketDetailsStateStoreCopyWithImpl<$Res>
+    extends _$RocketDetailsStateStoreCopyWithImpl<$Res,
+        _$_RocketDetailsStateStore>
+    implements _$$_RocketDetailsStateStoreCopyWith<$Res> {
+  __$$_RocketDetailsStateStoreCopyWithImpl(_$_RocketDetailsStateStore _value,
+      $Res Function(_$_RocketDetailsStateStore) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? rockets = null,
+    Object? rocket = freezed,
     Object? loading = null,
   }) {
-    return _then(_$_HomePageStateStore(
-      rockets: null == rockets
-          ? _value._rockets
-          : rockets // ignore: cast_nullable_to_non_nullable
-              as List<Rocket>,
+    return _then(_$_RocketDetailsStateStore(
+      rocket: freezed == rocket
+          ? _value.rocket
+          : rocket // ignore: cast_nullable_to_non_nullable
+              as Rocket?,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
@@ -1000,60 +1062,51 @@ class __$$_HomePageStateStoreCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_HomePageStateStore implements _HomePageStateStore {
-  _$_HomePageStateStore(
-      {final List<Rocket> rockets = const [], this.loading = false})
-      : _rockets = rockets;
+class _$_RocketDetailsStateStore implements _RocketDetailsStateStore {
+  _$_RocketDetailsStateStore({this.rocket, this.loading = false});
 
-  final List<Rocket> _rockets;
   @override
-  @JsonKey()
-  List<Rocket> get rockets {
-    if (_rockets is EqualUnmodifiableListView) return _rockets;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_rockets);
-  }
-
+  final Rocket? rocket;
   @override
   @JsonKey()
   final bool loading;
 
   @override
   String toString() {
-    return 'HomePageStateStore(rockets: $rockets, loading: $loading)';
+    return 'RocketDetailsStateStore(rocket: $rocket, loading: $loading)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HomePageStateStore &&
-            const DeepCollectionEquality().equals(other._rockets, _rockets) &&
+            other is _$_RocketDetailsStateStore &&
+            (identical(other.rocket, rocket) || other.rocket == rocket) &&
             (identical(other.loading, loading) || other.loading == loading));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_rockets), loading);
+  int get hashCode => Object.hash(runtimeType, rocket, loading);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HomePageStateStoreCopyWith<_$_HomePageStateStore> get copyWith =>
-      __$$_HomePageStateStoreCopyWithImpl<_$_HomePageStateStore>(
-          this, _$identity);
+  _$$_RocketDetailsStateStoreCopyWith<_$_RocketDetailsStateStore>
+      get copyWith =>
+          __$$_RocketDetailsStateStoreCopyWithImpl<_$_RocketDetailsStateStore>(
+              this, _$identity);
 }
 
-abstract class _HomePageStateStore implements HomePageStateStore {
-  factory _HomePageStateStore(
-      {final List<Rocket> rockets, final bool loading}) = _$_HomePageStateStore;
+abstract class _RocketDetailsStateStore implements RocketDetailsStateStore {
+  factory _RocketDetailsStateStore({final Rocket? rocket, final bool loading}) =
+      _$_RocketDetailsStateStore;
 
   @override
-  List<Rocket> get rockets;
+  Rocket? get rocket;
   @override
   bool get loading;
   @override
   @JsonKey(ignore: true)
-  _$$_HomePageStateStoreCopyWith<_$_HomePageStateStore> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_RocketDetailsStateStoreCopyWith<_$_RocketDetailsStateStore>
+      get copyWith => throw _privateConstructorUsedError;
 }

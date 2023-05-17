@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:advance_bloc_sample_project/presentation/screens/home_page/home_page.dart';
+import 'package:advance_bloc_sample_project/presentation/screens/rocket_details/rocket_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -69,6 +70,8 @@ abstract class RouteHandler {
     switch (routeID) {
       case RouteId.homePage:
         return _buildRoute(routeSettings, HomePage());
+      case RouteId.rocketDetails:
+        return _buildRoute(routeSettings, RocketDetailsPage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
@@ -108,6 +111,7 @@ abstract class RouteHandler {
 
 enum RouteId {
   homePage,
+  rocketDetails,
   noRoute,
 }
 

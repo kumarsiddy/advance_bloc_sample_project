@@ -1,5 +1,5 @@
 import 'package:advance_bloc_sample_project/presentation/core_app/design_library/app_colors.dart';
-import 'package:advance_bloc_sample_project/presentation/shared/widgets/text.dart';
+import 'package:advance_bloc_sample_project/presentation/core_app/design_library/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,7 +20,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       leading: IconButton(
         icon: Icon(
           Icons.arrow_back_ios,
-          size: Navigator.canPop(context) ? 18.h : 0,
+          size: Navigator.canPop(context) ? 16.r : 0,
           color: AppColors.primaryDark,
         ),
         onPressed: () {

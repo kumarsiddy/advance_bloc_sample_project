@@ -41,7 +41,7 @@ class HomePageBloc extends BaseBloc<HomePageEvent, HomePageState> {
       (exception) => handleException(emit, exception),
       (rockets) {
         emit(
-          HomePageState.initial(
+          HomePageState.onRocketsFetchSuccess(
             store: state.store.copyWith(
               rockets: rockets,
               loading: false,

@@ -30,6 +30,8 @@ dependencies:
   # to handle svg in the app
   flutter_svg: ^1.1.6
   freezed_annotation: ^2.2.0
+  # To give gap between two widgets
+  gap: ^3.0.0
   # to handle injection
   get_it: ^7.2.0
   # http -- dio depends on it

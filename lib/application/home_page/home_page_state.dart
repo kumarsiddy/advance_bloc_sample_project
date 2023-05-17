@@ -8,6 +8,10 @@ class HomePageState extends BaseState with _$HomePageState {
     required HomePageStateStore store,
   }) = _Initial;
 
+  const factory HomePageState.onRocketsFetchSuccess({
+    required HomePageStateStore store,
+  }) = _OnRocketsFetchSuccess;
+
   factory HomePageState.invalidateLoader({
     required HomePageStateStore store,
   }) = _InvalidateLoader;
