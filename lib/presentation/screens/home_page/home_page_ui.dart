@@ -43,9 +43,12 @@ class _RocketItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         ImageCard(
           rocket?.images?.first ?? '',
+          height: 120.h,
+          fit: BoxFit.fill,
         ),
         Padding(
           padding: EdgeInsets.only(top: 8.r),
