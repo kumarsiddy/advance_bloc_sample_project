@@ -23,10 +23,13 @@ Future<void> mainCommon(
       await configureDependencies(env);
 
       // Running the app with sentry coverage
-      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-          .then((_) {
-        runApp(const AppWidget());
-      });
+      SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp],
+      ).then(
+        (_) {
+          runApp(const AppWidget());
+        },
+      );
     },
     (error, stack) async {
       // await Crashlytics.logCrash(error, stackTrace: stack);
