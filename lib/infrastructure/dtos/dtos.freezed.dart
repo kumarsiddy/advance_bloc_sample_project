@@ -46,11 +46,11 @@ class _$ConnectionStatusCopyWithImpl<$Res, $Val extends ConnectionStatus>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
+    Object? type = null,
     Object? working = null,
   }) {
     return _then(_value.copyWith(
-      type: freezed == type
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ConnectivityResult,
@@ -84,11 +84,11 @@ class __$$_ConnectionStatusCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
+    Object? type = null,
     Object? working = null,
   }) {
     return _then(_$_ConnectionStatus(
-      type: freezed == type
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ConnectivityResult,
@@ -120,13 +120,12 @@ class _$_ConnectionStatus implements _ConnectionStatus {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ConnectionStatus &&
-            const DeepCollectionEquality().equals(other.type, type) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.working, working) || other.working == working));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(type), working);
+  int get hashCode => Object.hash(runtimeType, type, working);
 
   @JsonKey(ignore: true)
   @override

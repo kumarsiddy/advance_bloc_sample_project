@@ -1,0 +1,36 @@
+import 'package:advance_bloc_sample_project/application/base/base_bloc.dart';
+import 'package:advance_bloc_sample_project/application/base/base_event.dart';
+import 'package:advance_bloc_sample_project/application/base/base_state.dart';
+import 'package:advance_bloc_sample_project/domain/interfaces/i_spacex_facade.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
+
+part 'home_page_bloc.freezed.dart';
+
+part 'home_page_event.dart';
+
+part 'home_page_state.dart';
+
+@injectable
+class HomePageBloc extends BaseBloc<HomePageEvent, HomePageState> {
+  final ISpaceXFacade _spaceXFacade;
+
+  HomePageBloc(this._spaceXFacade)
+      : super(
+          HomePageState.initial(
+            store: HomePageStateStore(),
+          ),
+        );
+
+  @override
+  void handleEvents() {}
+
+  @override
+  void started([
+    Map<String, dynamic>? args,
+  ]) {
+    add(
+      const HomePageEvent.started(),
+    );
+  }
+}

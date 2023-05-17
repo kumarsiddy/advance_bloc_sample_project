@@ -14,15 +14,16 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../application/base_widget/base_widget_bloc.dart' as _i6;
+import '../application/home_page/home_page_bloc.dart' as _i13;
 import '../domain/interfaces/i_connection_aware_facade.dart' as _i4;
 import '../domain/interfaces/i_dio_provider.dart' as _i7;
-import '../domain/interfaces/i_user_facade.dart' as _i11;
+import '../domain/interfaces/i_spacex_facade.dart' as _i11;
 import '../env.dart' as _i3;
 import '../infrastructure/api_services/connection_aware_facde.dart' as _i5;
 import '../infrastructure/api_services/dio_provider.dart' as _i8;
 import '../infrastructure/api_services/retrofit_api_client.dart' as _i10;
-import '../infrastructure/user_facade.dart' as _i12;
-import 'injection_register_module.dart' as _i13;
+import '../infrastructure/spacex_facade.dart' as _i12;
+import 'injection_register_module.dart' as _i14;
 
 const String _uat = 'uat';
 const String _prod = 'prod';
@@ -62,15 +63,17 @@ extension GetItInjectableX on _i1.GetIt {
       preResolve: true,
     );
     gh.singleton<_i10.RetrofitApiClient>(_i10.RetrofitApiClient(gh<_i9.Dio>()));
-    gh.factory<_i11.IUserFacade>(
+    gh.factory<_i11.ISpaceXFacade>(
       () => _i12.UserFacade(gh<_i10.RetrofitApiClient>()),
       registerFor: {
         _uat,
         _prod,
       },
     );
+    gh.factory<_i13.HomePageBloc>(
+        () => _i13.HomePageBloc(gh<_i11.ISpaceXFacade>()));
     return this;
   }
 }
 
-class _$RegisterModule extends _i13.RegisterModule {}
+class _$RegisterModule extends _i14.RegisterModule {}
