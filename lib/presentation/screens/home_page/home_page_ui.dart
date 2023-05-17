@@ -50,7 +50,7 @@ class _RocketItem extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Hero(
-            tag: AppConstants.rocketImageTag,
+            tag: rocket?.name ?? '',
             child: ImageCard(
               rocket?.images?.first ?? '',
               height: 120.h,
