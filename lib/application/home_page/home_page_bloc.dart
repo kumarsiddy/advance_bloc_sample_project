@@ -34,10 +34,9 @@ class HomePageBloc extends BaseBloc<HomePageEvent, HomePageState> {
     _,
     Emitter<HomePageState> emit,
   ) async {
-    // invalidateLoader(emit, loading: true);
+    invalidateLoader(emit, loading: true);
 
     final rockets = await _spaceXFacade.getAllRockets();
-
     rockets.fold(
       (exception) => handleException(emit, exception),
       (rockets) {

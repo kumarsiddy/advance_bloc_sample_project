@@ -43,6 +43,10 @@ class HomePage extends BaseStatelessWidget<HomePageBloc> {
       initial: (_) {
         showInfoSnackbar(context, StringKeys.spaceshipReady);
       },
+      onException: (store, exception) => handleExceptionOnBaseUI(
+        context,
+        exception,
+      ),
       orElse: () {},
     );
   }

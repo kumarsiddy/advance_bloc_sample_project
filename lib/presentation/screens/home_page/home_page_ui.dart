@@ -3,16 +3,16 @@ part of 'home_page.dart';
 class _HomePageUi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.only(
-          left: 16.r,
-          right: 16.r,
-          top: 8.r,
-          bottom: 8.r,
-        ),
-        child: BlocBuilder<HomePageBloc, HomePageState>(
-          builder: (context, state) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: 16.r,
+        right: 16.r,
+        top: 8.r,
+        bottom: 8.r,
+      ),
+      child: BlocBuilder<HomePageBloc, HomePageState>(
+        builder: (context, state) {
+          if (state.store.rockets.isNotEmpty) {
             return GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -25,8 +25,10 @@ class _HomePageUi extends StatelessWidget {
                 );
               },
             );
-          },
-        ),
+          }
+
+          return const SizedBox();
+        },
       ),
     );
   }

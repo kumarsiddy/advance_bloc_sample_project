@@ -71,8 +71,6 @@ class _BaseStatefulWidgetState extends State<_BaseStatefulWidget> {
     BuildContext context,
     BaseWidgetState state,
   ) {
-    invalidateLoader(context, loading: state.store.loading);
-
     state.maybeWhen(
       onConnectivityChange: (store) => _handleOnConnectivityChange(
         context,
