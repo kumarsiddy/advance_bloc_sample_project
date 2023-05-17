@@ -26,7 +26,10 @@ class HomePageState extends BaseState with _$HomePageState {
       );
 
   @override
-  BaseState getExceptionState(Exception exception) => HomePageState.onException(
+  BaseState getExceptionState(
+    Exception exception,
+  ) =>
+      HomePageState.onException(
         store: store.copyWith(loading: false),
         exception: exception,
       );

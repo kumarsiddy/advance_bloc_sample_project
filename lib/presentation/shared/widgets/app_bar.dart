@@ -1,0 +1,38 @@
+import 'package:advance_bloc_sample_project/presentation/core_app/design_library/app_colors.dart';
+import 'package:advance_bloc_sample_project/presentation/shared/widgets/text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
+  final String? title;
+
+  const CustomAppBar({
+    super.key,
+    this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: AppColors.white,
+      elevation: 0.2,
+      centerTitle: true,
+      leading: IconButton(
+        icon: Icon(
+          Icons.arrow_back_ios,
+          size: Navigator.canPop(context) ? 18.h : 0,
+          color: AppColors.primaryDark,
+        ),
+        onPressed: () {
+          if (Navigator.canPop(context)) {
+            Navigator.of(context).pop();
+          }
+        },
+      ),
+      title: Body(text: title ?? ''),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
